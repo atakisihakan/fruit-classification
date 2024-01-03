@@ -71,11 +71,11 @@ st.image(foreground_img_path,
          use_column_width= True)
 
 st.write(':gray[**Note**: The model has been trained \
-         on a relatively small dataset coming from \
+         on relatively a small dataset coming from \
          a single source. Thus, it works best \
          when the input image contains \
-         a single fruit (or as few as possible) \
-         and has a plain background.]')
+         a single fruit (or as few as possible),  \
+         unpeeled and has a plain background.]')
 
 
 # Upload image or insert URL on sidebar
