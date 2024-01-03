@@ -81,7 +81,7 @@ st.write(':gray[**Note**: The model has been trained \
 # Upload image or insert URL on sidebar
 with st.sidebar:
 
-    # clear existing url when an img is uploaded
+    # clear existing url, if any, when an img is uploaded
     def clear_url():
         st.session_state['url_key'] = ''
 
@@ -91,18 +91,18 @@ with st.sidebar:
                             on_change= clear_url,
                             # call clear_url if img is uploaded
                             )
-    
+
+    # Write centered "OR" between upload and URL
+    st.write("<h5 style='text-align: center; \
+             color: gray;'>OR</h5>",
+             unsafe_allow_html= True)
+
     # Use session state to store the value for the widget 
     # and clear it. Then, use the stored value in the rest 
     # of the script (not the “output” from the widget)
     def clear_widget():
         st.session_state['url_key'] = st.session_state['widget_key']
         st.session_state['widget_key'] = ''
-
-    # Write centered "OR" between upload and URL
-    st.write("<h5 style='text-align: center; \
-             color: gray;'>OR</h5>",
-             unsafe_allow_html= True)
 
     st.text_input(
         'Enter image URL',
@@ -122,8 +122,8 @@ with st.sidebar:
 # Footer stuff
 st.write('***')
 st.write(
-    '`Created by` [hakanatakisi](https://www.google.com/) | \
-        `Code` [GitHub](https://www.google.com/)')
+    '`Created by` [hakanatakisi](https://github.com/atakisihakan) | \
+        `Code` [GitHub](https://github.com/atakisihakan/fruit-classification)')
 
 
 # Loading modules take considerable time ~10 sec
