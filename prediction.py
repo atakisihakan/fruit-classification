@@ -14,7 +14,7 @@ saved_class_index_to_label = "class_index_to_label.sav"
 
 
 # Prevent loading model multiple times
-# by caching function 
+# by caching function using @st.cache_resource
 @st.cache_resource(show_spinner= False)
 def load_model():
     '''
