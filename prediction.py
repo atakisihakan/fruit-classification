@@ -100,10 +100,8 @@ def predict(image_path):
     # -> (1,height,width,channel)
     img_tensor = np.expand_dims(preprocessed_array, axis=0)
 
-
     # predict class probs
     pred_probs = model.predict(img_tensor)
-    #pred_probs = model.serve(img_tensor)
 
     # get the most likely class index
     pred_class_index = np.argmax(pred_probs, axis=-1)[0]
